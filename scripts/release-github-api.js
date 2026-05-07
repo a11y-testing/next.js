@@ -8,7 +8,7 @@ const {
   alignLocalBranchWithSignedCommit,
 } = require('./github-utils/signed-commit')
 
-const REPO_API_PATH = '/repos/vercel/next.js'
+const REPO_API_PATH = `/repos/${process.env.REPO}`
 
 async function git(args, options = {}) {
   const { captureOutput = false, ...execaOptions } = options
@@ -95,7 +95,7 @@ async function createGitHubReleaseCommit(token) {
 
   const commit = await createSignedCommit({
     token,
-    owner: 'vercel',
+    owner: 'a11y-testing',
     repo: 'next.js',
     baseSha,
     localCommitSha: localReleaseSha,
