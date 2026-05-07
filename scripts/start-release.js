@@ -59,7 +59,7 @@ async function main() {
   await configureGitHubAuth(githubToken)
   await verifyGitHubApiAccess(
     githubToken,
-    '/repos/vercel/next.js/releases?per_page=1',
+    `/repos/${process.env.REPO}/releases?per_page=1`,
     'release lookup'
   )
 

@@ -2,7 +2,7 @@
 
 const execa = require('execa')
 
-const REPO_URL = 'github.com/vercel/next.js.git'
+const REPO_URL = `github.com/${process.env.REPO}.git`
 
 function getGitHubToken() {
   return (

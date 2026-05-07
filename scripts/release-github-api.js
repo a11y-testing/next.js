@@ -3,7 +3,7 @@
 const execa = require('execa')
 const fs = require('fs/promises')
 
-const REPO_API_PATH = '/repos/vercel/next.js'
+const REPO_API_PATH = `/repos/${process.env.REPO}`
 
 async function git(args, options = {}) {
   const { captureOutput = false, ...execaOptions } = options
